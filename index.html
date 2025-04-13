@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Welcome to JEE Blog Zone</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3em;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+      animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 15px 40px;
+      font-size: 1.2em;
+      background: #111;
+      color: #fff;
+      border: 3px solid transparent;
+      border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      color: white;
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to JEE Blog Zone</h1>
+  <a href="/topic.html" class="btn">Enter for topics </a>
+
+</body>
+</html>
