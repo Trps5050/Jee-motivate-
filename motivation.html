@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Blog Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      overflow-x: hidden;
+      border: 5px solid;
+      border-image: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet) 1;
+      animation: borderRGB 5s linear infinite;
+    }@keyframes borderRGB {
+  0% { border-image: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet) 1; }
+  25% { border-image: linear-gradient(45deg, violet, red, orange, yellow, green, cyan, blue) 1; }
+  50% { border-image: linear-gradient(45deg, blue, violet, red, orange, yellow, green, cyan) 1; }
+  75% { border-image: linear-gradient(45deg, cyan, blue, violet, red, orange, yellow, green) 1; }
+  100% { border-image: linear-gradient(45deg, red, orange, yellow, green, cyan, blue, violet) 1; }
+}
+
+header {
+  background-color: #007BFF;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.lightning {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.5) 0%, transparent 60%);
+  animation: lightning 2s infinite;
+}
+@keyframes lightning {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: 100%; }
+}
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+.blog-post {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.blog-post h2 {
+  margin-top: 0;
+}
+.blog-post .date {
+  color: gray;
+  font-size: 0.9em;
+}
+.blog-post .tags {
+  color: #007BFF;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="lightning"></div>
+    <h1>IIT motivation</h1>
+  </header>
+  <div class="container" id="postsContainer">
+    <!-- Blog posts will appear here -->
+  </div>  <script>
+    const container = document.getElementById("postsContainer");
+    let posts = JSON.parse(localStorage.getItem("blogPosts")) || [];
+
+    // Default post added manually for demo
+    posts.push({
+      title: "IIT Sapna Nahi, Sankalp Hai – Ab Kabhi Nahi Rukenge!",
+      content: `"Success ke liye talent nahi, junoon chahiye!"<br><br>
+      IIT ka raasta mushkil zaroor hai, lekin namumkin nahi. Har din jab tum subah uthte ho, tumhare paas ek naya mauka hota hai – apne sapne ke ek kadam aur kareeb jaane ka.<br><br>
+      Kai baar lagega ki sab kuch chhod doon, sab thak gaya hoon... lekin wahi waqt hota hai apne aap ko sabit karne ka. Jitne wale wahi hote hain jo haar ke baad bhi uthte hain.<br><br>
+      <strong>Tayari ke tips:</strong><br>
+      - Har din ka goal fix karo<br>
+      - Mock tests lo, galtiyon se seekho<br>
+      - Health ka bhi khayal rakho<br>
+      - Distraction se door raho (phone, time-pass)<br><br>
+      <em>"Tumhara ek-ek din, ek-ek raat tumhe us gate tak le jaa rahi hai jahan likha hoga – Indian Institute of Technology."</em><br><br>
+      Bas bhai, ab ruko mat. Tumhara IIT tumhara intezaar kar raha hai!`,
+      date: "April 12, 2025",
+      tags: ["motivation", "IIT", "studentlife", "success"]
+    });
+
+    posts.reverse().forEach(post => {
+      const div = document.createElement("div");
+      div.className = "blog-post";
+      div.innerHTML = `
+        <h2>${post.title}</h2>
+        <p class="date">${post.date}</p>
+        <p>${post.content}</p>
+        <p class="tags">Tags: ${post.tags.join(", ")}</p>
+      `;
+      container.appendChild(div);
+    });
+  </script></body>
+</html>
