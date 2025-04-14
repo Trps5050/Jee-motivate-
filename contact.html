@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - JEE Blog Zone</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ccc;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    form {
+      background: #111;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      background: #222;
+      color: #fff;
+    }
+
+    input[type="submit"] {
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      transform: scale(1.05);
+    }
+
+    a {
+      margin-top: 20px;
+      display: inline-block;
+      color: cyan;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Contact Us</h1>
+  <p>Have a question or feedback? We’d love to hear from you!</p>
+
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Write your message here..." rows="5" required></textarea>
+    <input type="submit" value="Send Message">
+  </form>
+
+  <a href="index.html">Back to Home</a>
+
+</body>
+</html>
