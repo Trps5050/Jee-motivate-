@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Head में ये स्क्रिप्ट डालो -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<!-- जहाँ फॉर्म है वहाँ ये जोड़ो -->
+<form action="/verify" method="POST">
+  <!-- अपने input fields यहां रखो -->
+  <div class="g-recaptcha" data-sitekey="6Lefn3ErAAAAAP2GZH9l2QQgUUeW7XgxOGWb-nBd"></div>
+  <br/>
+  <input type="submit" value="Submit">
+</form>
+
+  
+
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="jOYApLSaZN3XuAg51G6Vzn6SaElVqrO3RLlvGdFSZGY" />
