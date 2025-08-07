@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Study Videos | JEE Blog Zone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Study videos for JEE: Class 11, Class 12, Motivation, and Music.">
+  <meta name="author" content="Raushan Mishra" />
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: pulse 2s infinite alternate;
+      text-shadow: 0 0 10px rgba(255,255,255,0.2);
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+    #attention {
+      text-align: center;
+      margin-top: 40px;
+      color: #0ff;
+      font-size: 1.3em;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%   { opacity: 1; }
+      50%  { opacity: 0.2; }
+      100% { opacity: 1; }
+    }
+
+    select {
+      display: block;
+      margin: 30px auto 40px auto;
+      padding: 12px 20px;
+      font-size: 1em;
+      border-radius: 8px;
+      background-color: #111;
+      color: #0ff;
+      border: 2px solid #0ff;
+    }
+
+    .video-list {
+      max-width: 700px;
+      margin: auto;
+      display: none;
+      animation: fadeIn 0.6s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .video-link {
+      display: block;
+      margin: 15px 0;
+      font-size: 1.2em;
+      color: darkred;
+      text-decoration: none;
+      border-bottom: 1px solid #0ff;
+      padding-bottom: 5px;
+      transition: 0.2s ease;
+    }
+
+    .video-link:hover {
+      color: #fff;
+      border-color: #fff;
+    }
+
+    .video-link:visited {
+      color: #0ff; /* Fix: keeps same color after click */
+    }
+
+    .back-link {
+      display: block;
+      margin: 40px auto 10px auto;
+      text-align: center;
+      font-size: 1.2em;
+      color: #0ff;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎥 Study Videos</h1>
+
+  <div id="attention">⚡ Please select a category to explore study videos</div>
+
+  <select id="category" onchange="filterVideos()">
+    <option value="none">-- Select Category --</option>
+    <option value="class11">📘 Class 11</option>
+    <option value="class12">📗 Class 12</option>
+    <option value="motivation">💪 Motivation</option>
+    <option value="music">🎧 Study Music</option>
+  </select>
+
+  <!-- CLASS 11 -->
+  <div class="video-list" id="class11">
+    <!-- CLASS 11 - PHYSICS -->   <h3 style="color:#0ff; margin-top:40px;"> Class 11 physics </h3>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMaev6ovGTwhfLLidWzCveoHZ&si=MV0oN3Lvur7fVB7X" class="video-item class11 video-link" target="_blank">1. Physical World</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMafDl40Jkm0VGDKm6j4xgClj&si=irhtxGvPBR1UT4xj" class="video-item class11 video-link" target="_blank">2. Units and Measurements</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMadyoou3Fl2jR0pG3X1Wi6xA&si=NXtVWWYO82QZqQoX" class="video-item class11 video-link" target="_blank">3. Motion in a Straight Line</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMac_AeDfj1l85vp_93Dk_Agt&si=Og-VmX5BTdkd-7CK" class="video-item class11 video-link" target="_blank">4. Motion in a Plane</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMadXu_0_nqUQAANlsPNxCM42&si=cg-zfrw3K4Aokcfk" class="video-item class11 video-link" target="_blank">5. Laws of Motion</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMadTDfU4hJ23tdPqIwV-v6io&si=yFsVjvspaPcMNSWK" class="video-item class11 video-link" target="_blank">6. Work, Energy and Power</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMad-bxE6Fu7wyp_wyUcctCmU&si=IaHmdB6Pxjs7-rgo" class="video-item class11 video-link" target="_blank">7. System of Particles & Rotational Motion</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMaeGEjLX2pJU-qqnPcyjpBiV&si=wyFmFI3jrI3wxQQa" class="video-item class11 video-link" target="_blank">8. Gravitation</a>
+<a href="https://youtube.com/playlist?list=PLno9Nk5f6CTK_A-mUhMKPXfsv-B_0SoZJ&si=JLPAu1nZlgPlsfHM" class="video-item class11 video-link" target="_blank">9. Mechanical Properties of Solids</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMacuWACFhY1HSZAfZlwml0X4&si=cGVJP6HlU9bM2aya" class="video-item class11 video-link" target="_blank">10. Mechanical Properties of Fluids</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMadCqEDGWpPY-ScpPMZpVHqK&si=c3Nt1W4ahyiV6MrS" class="video-item class11 video-link" target="_blank">11. Thermal Properties of Matter</a>
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMadOzxKmO5t223TkLNxCt2Vn&si=w8JwCYGyJF_KLRhP" class="video-item class11 video-link" target="_blank">12. Thermodynamics</a>
+<a href="" class="video-item class11 video-link" target="_blank">13. Kinetic Theory of Gases</a>
+<a href="https://youtu.be/1p7ZBJ_miRc" class="video-item class11 video-link" target="_blank">14. Oscillations</a>
+<a href="https://youtu.be/7R4lcs8hWDU" class="video-item class11 video-link" target="_blank">15. Waves</a>
+
+<!-- Subheading for Class 11 Chemistry -->
+<h3 style="color:#0ff; margin-top:40px;">🧪 Class 11 Chemistry</h3>
+
+<!-- CLASS 11 - CHEMISTRY LINKS -->
+<a href="https://youtube.com/playlist?list=PL_A4M5IAkMaccW6F0AgKT-mmrlAQksYCu&si=AsRWmpe1HD93rZgx" class="video-link" target="_blank">1. Some Basic Concepts of Chemistry (Mole Concept)</a>
+<a href="https://youtu.be/TlzzywHzWv8" class="video-item class11 video-link" target="_blank">2. Structure of Atom</a>
+<a href="https://youtu.be/5n9uBoEQep4" class="video-item class11 video-link" target="_blank">3. Classification of Elements and Periodicity</a>
+<a href="https://youtu.be/EhSyqGbSN8E" class="video-item class11 video-link" target="_blank">4. Chemical Bonding and Molecular Structure</a>
+<a href="https://youtu.be/TnJ2FnVvgwQ" class="video-item class11 video-link" target="_blank">5. States of Matter (Gases and Liquids)</a>
+<a href="https://youtu.be/dMGtznlphAw" class="video-item class11 video-link" target="_blank">6. Thermodynamics (Chemistry)</a>
+<a href="https://youtu.be/sJ7_S5xQvm4" class="video-item class11 video-link" target="_blank">7. Equilibrium (Ionic & Chemical)</a>
+<a href="https://youtu.be/3ZVKFlNsx34" class="video-item class11 video-link" target="_blank">8. Redox Reactions</a>
+<a href="https://youtu.be/SyE9C_iwWQE" class="video-item class11 video-link" target="_blank">9. Hydrogen</a>
+<a href="https://youtu.be/_f0cczyhJ5M" class="video-item class11 video-link" target="_blank">10. The s-Block Element</a>
+<a href="https://youtu.be/qKZNVb7y8sk" class="video-item class11 video-link" target="_blank">11. Some p-Block Elements</a>
+<a href="https://youtu.be/jU71SgDNuKg" class="video-item class11 video-link" target="_blank">12. Organic Chemistry - Basic Principles</a>
+<a href="https://youtu.be/O8Mw07MyZB4" class="video-item class11 video-link" target="_blank">13. Hydrocarbons</a>
+<a href="https://youtu.be/Sv97HX3ScRc" class="video-item class11 video-link" target="_blank">14. Environmental Chemistry</a>
+
+<!-- Subheading for Class 11 Math -->
+<h3 style="color:#0ff; margin-top:40px;">📐 Class 11 Math</h3>
+
+<!-- CLASS 11 - MATH LINKS -->
+<a href="https://youtu.be/ue5w5I6AI5E" class="video-item class11 video-link" target="_blank">1. Sets</a>
+<a href="https://youtu.be/8UpqUupSRaQ" class="video-item class11 video-link" target="_blank">2. Relations and Functions</a>
+<a href="https://youtu.be/T9LkE4_Ebz4" class="video-item class11 video-link" target="_blank">3. Trigonometric Functions</a>
+<a href="https://youtu.be/kyoqCk4_jfU" class="video-item class11 video-link" target="_blank">4. Principle of Mathematical Induction</a>
+<a href="https://youtu.be/RY9IGoa_UhA" class="video-item class11 video-link" target="_blank">5. Complex Numbers and Quadratic Equations</a>
+<a href="https://youtu.be/IICoE3T8x-U" class="video-item class11 video-link" target="_blank">6. Linear Inequalities</a>
+<a href="https://youtu.be/6-nmdcbQvLg" class="video-item class11 video-link" target="_blank">7. Permutations and Combinations</a>
+<a href="https://youtu.be/oJQkKNXZp8Q" class="video-item class11 video-link" target="_blank">8. Binomial Theorem</a>
+<a href="https://youtu.be/L8FydROa9sk" class="video-item class11 video-link" target="_blank">9. Sequences and Series</a>
+<a href="https://youtu.be/YtrIzA3Kq3Q" class="video-item class11 video-link" target="_blank">10. Straight Lines</a>
+<a href="https://youtu.be/YxBuwYHbRro" class="video-item class11 video-link" target="_blank">11. Conic Sections</a>
+<a href="https://youtu.be/KZWtMQG2HBo" class="video-item class11 video-link" target="_blank">12. Introduction to 3D Geometry</a>
+<a href="https://youtu.be/FrjbfzE1rWE" class="video-item class11 video-link" target="_blank">13. Limits and Derivatives</a>
+<a href="https://youtu.be/BHGHHi8NSqE" class="video-item class11 video-link" target="_blank">14. Mathematical Reasoning</a>
+<a href="https://youtu.be/lzg2lExbfNg" class="video-item class11 video-link" target="_blank">15. Statistics</a>
+<a href="https://youtu.be/GO_qv15k49E" class="video-item class11 video-link" target="_blank">16. Probability (Class 11)</a>
+  </div>
+
+  <!-- CLASS 12 -->
+  <div class="video-list" id="class12">
+    <a href="https://youtu.be/0V9VbF1eIio" class="video-link" target="_blank">Class 12: Electrostatics Made Easy</a>
+    <a href="https://youtu.be/lywWPB8I4a4" class="video-link" target="_blank">Class 12: Organic Reaction Mechanism</a>
+  </div>
+
+  <!-- MOTIVATION -->
+  <div class="video-list" id="motivation">
+    <a href="https://youtu.be/CzTqTuLwKwA" class="video-link" target="_blank">How I Cracked IIT JEE – Toppers Motivation</a>
+    <a href="https://youtu.be/JfauKqF6F8M" class="video-link" target="_blank">Stay Motivated for JEE | Daily Pep Talk</a>
+  </div>
+
+  <!-- MUSIC -->
+  <div class="video-list" id="music">
+    <a href="https://youtu.be/FeD9NS2wsXk" class="video-link" target="_blank">Lofi Study Music for JEE Prep</a>
+    <a href="https://youtu.be/k1F37LsY1JY" class="video-link" target="_blank">Focus Music – No Distractions</a>
+  </div>
+
+  <a href="index.html" class="back-link">⬅️ Back to Home</a>
+
+  <script>
+    function filterVideos() {
+      const selected = document.getElementById("category").value;
+      const lists = document.querySelectorAll(".video-list");
+
+      // Hide all lists
+      lists.forEach(list => list.style.display = "none");
+
+      // Hide blinking attention
+      document.getElementById("attention").style.display = "none";
+
+      // Show selected list
+      if (selected !== "none") {
+        const listToShow = document.getElementById(selected);
+        if (listToShow) {
+          listToShow.style.display = "block";
+        }
+      } else {
+        // If reset, show attention again
+        document.getElementById("attention").style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
