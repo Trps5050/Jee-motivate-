@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,14 +10,14 @@
   <meta name="author" content="Raushan Mishra">
   <meta name="keywords" content="JEE 2027, JEE Blog Zone, Raushan Mishra, IIT, JEE notes, short tricks, JEE motivation, JEE study material">
 
-  <!-- Open Graph (for social sharing like Instagram preview etc.) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="JEE Blog Zone by Raushan Mishra">
   <meta property="og:description" content="Get the best JEE notes, tricks, strategies and motivation by Raushan Mishra to crack JEE 2027.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://trps5050.github.io/Jee-motivate-/">
   <meta property="og:site_name" content="JEE Blog Zone">
 
-  <!-- JSON-LD Structured Data (Schema Markup) -->
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,13 +37,31 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000;
+      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4adede, #ff9a9e);
+      background-size: 800% 800%;
+      animation: gradientMove 15s ease infinite;
       color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Particle layer */
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
     }
 
     nav {
@@ -84,34 +102,36 @@
       margin-top: 10px;
       text-align: center;
       max-width: 600px;
-      color: #ccc;
+      color: #eee;
     }
 
     .btn {
-      margin-top: 30px;
-      padding: 15px 40px;
-      font-size: 1.2em;
-      background: #111;
-      color: #fff;
-      border: 3px solid transparent;
-      border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.4s ease;
-      text-decoration: none;
-    }
+  margin-top: 30px;
+  padding: 15px 40px;
+  font-size: 1.2em;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
 
-    .btn:hover {
-      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-      color: white;
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-    }
+.btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
 
     .footer {
       margin-top: auto;
       text-align: center;
       font-size: 0.9em;
-      color: #888;
+      color: #ddd;
       padding: 20px;
     }
 
@@ -134,7 +154,7 @@
 
     ul {
       list-style: square;
-      color: #ccc;
+      color: #eee;
       padding-left: 20px;
       text-align: left;
       max-width: 600px;
@@ -142,6 +162,9 @@
   </style>
 </head>
 <body>
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
 
   <nav>
     <a href="about.html">About Us</a>
@@ -173,7 +196,22 @@
     <a href="https://www.instagram.com/_.raushan._.mishra._?igsh=ejN3Nm9wOHExNncw" target="_blank">Raushan Mishra</a> & 
     <a href="https://www.instagram.com/_arya_singh_2?igsh=b211ZmRmaGxpMDI2" target="_blank">........</a> | © 2025
   </div>
+
   <script async src="https://cse.google.com/cse.js?cx=a5e866999150a4c97"></script>
 
+  <!-- Particles.js Script -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        size: { value: 3 },
+        move: { speed: 1 },
+        line_linked: { enable: true },
+        color: { value: "#ffffff" }
+      }
+    });
+  </script>
+
 </body>
-</html>      
+</html>
