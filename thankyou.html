@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(270deg, #6a11cb, #2575fc);
+        background-size: 400% 400%;
+        animation: gradientMove 8s ease infinite;
+        color: white;
+        text-align: center;
+    }
+
+    @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .thank-container {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 30px rgba(0,0,0,0.3);
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 20px;
+    }
+
+    a {
+        display: inline-block;
+        padding: 12px 25px;
+        background: white;
+        color: #2575fc;
+        font-weight: bold;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    a:hover {
+        background: #2575fc;
+        color: white;
+        box-shadow: 0 0 15px rgba(255,255,255,0.5);
+    }
+</style>
+</head>
+<body>
+
+<div class="thank-container">
+    <h1>🎉 Thank You!</h1>
+    <p>Your message has been sent successfully.<br>We’ll get back to you soon.</p>
+    <a href="index.html">Go Back Home</a>
+</div>
+
+</body>
+</html>
