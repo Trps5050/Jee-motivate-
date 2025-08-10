@@ -75,13 +75,17 @@
   <h1>Contact Us</h1>
   <p>Have a question or feedback? We’d love to hear from you!</p>
 
-  <form action="https://formsubmit.co/raushankumarmishra2302@gmail.com"method="POST">
+  <form action="https://formsubmit.co/raushankumarmishra2302@gmail.com" method="POST">
+    <!-- FormSubmit hidden fields -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://trps5050.github.io/Jee-motivate-/thankyou.html">
+
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="Write your message here..." rows="5" required></textarea>
     <input type="submit" value="Send Message">
-  </form>
-
+</form>
   <a href="index.html">Back to Home</a>
 
 </body>
