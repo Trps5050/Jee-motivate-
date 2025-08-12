@@ -4,23 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Boost your JEE preparation with these motivational tips, real stories, and proven strategies for IIT success.">
-<meta name="keywords" content="JEE motivation, IIT study tips, JEE preparation, how to crack JEE, IIT success tips">
+  <meta name="keywords" content="JEE motivation, IIT study tips, JEE preparation, how to crack JEE, IIT success tips">
   <title>Select a Topic</title>
+
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #111;
       color: #fff;
       padding: 40px;
       text-align: center;
-animation: fadeIn 1s ease-in-out;
-    }@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+      animation: fadeIn 1s ease-in-out;
+      position: relative;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background: linear-gradient(270deg, #ff6ec4, #7873f5, #4adede, #ff9a9e);
+      background-size: 800% 800%;
+      animation: gradientMove 15s ease infinite;
     }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Particle background layer */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
     h1 {
       margin-bottom: 30px;
+      text-shadow: 0px 0px 10px rgba(255,255,255,0.4);
     }
+
     .topic-btn {
       padding: 10px 30px;
       margin: 10px;
@@ -29,12 +57,16 @@ animation: fadeIn 1s ease-in-out;
       border-radius: 8px;
       cursor: pointer;
       background: linear-gradient(45deg, blue , #ff416c);
-      color: brown;
+      color: white;
       transition: 0.3s ease;
+      box-shadow: 0px 0px 15px rgba(0,0,0,0.3);
     }
+
     .topic-btn:hover {
       background: linear-gradient(45deg, #24c6dc, #514a9d);
+      transform: scale(1.05);
     }
+
     .topic-btn a {
       color: white;
       text-decoration: none;
@@ -45,19 +77,37 @@ animation: fadeIn 1s ease-in-out;
   </style>
 </head>
 <body>
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
   <h1>Select a Topic You Want to Explore</h1>
   
   <button class="topic-btn"><a href="class.html">Study video</a></button>
   <button class="topic-btn"><a href="motivation.html">Motivation</a></button>
   <button class="topic-btn"><a href="physics.html">Physics</a></button>
-  <button class="topic-btn"><a href="chemistry.html">chemistry shotcut</a></button>
+  <button class="topic-btn"><a href="chemistry.html">Chemistry Shortcut</a></button>
   <button class="topic-btn"><a href="tips.html">JEE Tips</a></button>
-  <button class="topic-btn"><a href="time.html"> JEE Time Table</a></button>
+  <button class="topic-btn"><a href="time.html">JEE Time Table</a></button>
   <button class="topic-btn"><a href="stress.html">Stress Management</a></button>
-  <button class="topic-btn"><a href="study.html">how to  study and balance jee or board exam </a></button>
-  <button class="topic-btn"><a href="best.html">best strategy for Jee </a></button>
-  <button class="topic-btn"><a href="crack.html">how to crack Jee </a></button>
-  <button class="topic-btn"><a href="stay.html">how to stay motivated </a></button>
-  
+  <button class="topic-btn"><a href="study.html">How to Study & Balance JEE or Board Exam</a></button>
+  <button class="topic-btn"><a href="best.html">Best Strategy for JEE</a></button>
+  <button class="topic-btn"><a href="crack.html">How to Crack JEE</a></button>
+  <button class="topic-btn"><a href="stay.html">How to Stay Motivated</a></button>
+
+  <!-- Particle JS Script (Same as index page) -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        size: { value: 3 },
+        move: { speed: 1 },
+        line_linked: { enable: true },
+        color: { value: "#ffffff" }
+      }
+    });
+  </script>
+
 </body>
 </html>
