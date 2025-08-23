@@ -17,7 +17,6 @@
       justify-content: center;
       min-height: 100vh;
     }
-
     h1 {
       font-size: 2.5em;
       background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
@@ -25,48 +24,66 @@
       -webkit-text-fill-color: transparent;
       margin-bottom: 10px;
     }
-
     p {
       color: #ccc;
       margin-bottom: 30px;
       text-align: center;
     }
-
     form {
       background: #111;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
       width: 90%;
       max-width: 500px;
     }
-
     input, textarea {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 12px;
+      margin: 12px 0;
       border: none;
       border-radius: 8px;
       background: #222;
       color: #fff;
+      font-size: 1em;
+      outline: none;
+      transition: border 0.3s, box-shadow 0.3s;
     }
-
+    input:focus, textarea:focus {
+      box-shadow: 0 0 8px cyan;
+    }
     input[type="submit"] {
       background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
       cursor: pointer;
       font-weight: bold;
       transition: 0.3s;
     }
-
     input[type="submit"]:hover {
       transform: scale(1.05);
     }
-
     a {
       margin-top: 20px;
       display: inline-block;
       color: cyan;
       text-decoration: none;
+    }
+    .error {
+      color: #ff4d4d;
+      font-size: 0.9em;
+      margin-top: -5px;
+      margin-bottom: 10px;
+      display: none;
+      animation: shake 0.3s;
+    }
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-4px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-4px); }
+      100% { transform: translateX(0); }
+    }
+    .invalid {
+      border: 2px solid #ff4d4d;
     }
   </style>
 </head>
@@ -75,19 +92,45 @@
   <h1>Contact Us</h1>
   <p>Have a question or feedback? We’d love to hear from you!</p>
 
-  <form action="https://formsubmit.co/raushankumarmishra2302@gmail.com" method="POST">
-    <!-- FormSubmit hidden fields -->
+  <form id="contactForm" action="https://formsubmit.co/raushankumarmishra2302@gmail.com" method="POST">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_next" value="https://trps5050.github.io/Jee-motivate-/thankyou.html">
 
     <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+    <div id="emailError" class="error">❌ Invalid email address</div>
     <textarea name="message" placeholder="Write your message here..." rows="5" required></textarea>
     <input type="submit" value="Send Message">
-</form>
-  <form action="https://formspree.io/f/abcd1234?redirect=https://tumhariwebsite.com/thankyou.html" method="POST">
+  </form>
+
   <a href="index.html">Back to Home</a>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const emailInput = document.getElementById("email");
+    const emailError = document.getElementById("emailError");
+
+    form.addEventListener("submit", function(event) {
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      if (!emailPattern.test(emailInput.value)) {
+        event.preventDefault();
+        emailError.style.display = "block";
+        emailInput.classList.add("invalid");
+      } else {
+        emailError.style.display = "none";
+        emailInput.classList.remove("invalid");
+      }
+    });
+
+    emailInput.addEventListener("input", function() {
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      if (emailPattern.test(emailInput.value)) {
+        emailError.style.display = "none";
+        emailInput.classList.remove("invalid");
+      }
+    });
+  </script>
 
 </body>
 </html>
