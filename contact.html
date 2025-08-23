@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background-color: #000;
+      background: radial-gradient(circle at top, #0f0c29, #302b63, #24243e);
       color: #fff;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
@@ -16,74 +16,126 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      overflow: hidden;
     }
+
     h1 {
-      font-size: 2.5em;
+      font-size: 3em;
       background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+      background-size: 400% 400%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      animation: gradientMove 6s ease infinite, slideDown 1.5s forwards;
       margin-bottom: 10px;
+      opacity: 0;
+      transform: translateY(-50px);
     }
+
     p {
       color: #ccc;
       margin-bottom: 30px;
       text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s 1s forwards;
     }
+
     form {
-      background: #111;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
       padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.15);
       width: 90%;
       max-width: 500px;
+      transform: scale(0.8);
+      opacity: 0;
+      animation: popUp 1.5s 1.2s forwards;
     }
+
     input, textarea {
       width: 100%;
       padding: 12px;
       margin: 12px 0;
       border: none;
-      border-radius: 8px;
-      background: #222;
+      border-radius: 10px;
+      background: #1a1a1a;
       color: #fff;
-      font-size: 1em;
-      outline: none;
-      transition: border 0.3s, box-shadow 0.3s;
-    }
-    input:focus, textarea:focus {
-      box-shadow: 0 0 8px cyan;
-    }
-    input[type="submit"] {
-      background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-      cursor: pointer;
-      font-weight: bold;
       transition: 0.3s;
     }
-    input[type="submit"]:hover {
-      transform: scale(1.05);
+
+    input:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 15px #00f5ff, 0 0 25px #00f5ff;
+      transform: scale(1.02);
     }
+
+    input[type="submit"] {
+      background: linear-gradient(90deg, #ff416c, #ff4b2b, #ff416c);
+      background-size: 200% auto;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.4s;
+      animation: gradientShift 3s infinite alternate;
+    }
+
+    input[type="submit"]:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 20px #ff416c;
+      animation: pulse 1s infinite;
+    }
+
     a {
       margin-top: 20px;
       display: inline-block;
       color: cyan;
       text-decoration: none;
+      transition: 0.3s;
+      opacity: 0;
+      animation: fadeIn 2s 2.2s forwards;
     }
+
+    a:hover {
+      text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+    }
+
+    /* Animations */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes gradientShift {
+      from { background-position: 0% center; }
+      to { background-position: 100% center; }
+    }
+
+    @keyframes slideDown {
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @keyframes popUp {
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Error message */
     .error {
-      color: #ff4d4d;
-      font-size: 0.9em;
+      color: #ff4b2b;
+      font-size: 14px;
+      display: none;
       margin-top: -5px;
       margin-bottom: 10px;
-      display: none;
-      animation: shake 0.3s;
-    }
-    @keyframes shake {
-      0% { transform: translateX(0); }
-      25% { transform: translateX(-4px); }
-      50% { transform: translateX(4px); }
-      75% { transform: translateX(-4px); }
-      100% { transform: translateX(0); }
-    }
-    .invalid {
-      border: 2px solid #ff4d4d;
     }
   </style>
 </head>
@@ -99,36 +151,43 @@
 
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" id="email" name="email" placeholder="Your Email" required>
-    <div id="emailError" class="error">❌ Invalid email address</div>
+    <div class="error" id="emailError">⚠ Please enter a valid email (example: user@gmail.com)</div>
     <textarea name="message" placeholder="Write your message here..." rows="5" required></textarea>
     <input type="submit" value="Send Message">
   </form>
 
-  <a href="index.html">Back to Home</a>
+  <a href="index.html">⬅ Back to Home</a>
 
   <script>
-    const form = document.getElementById("contactForm");
-    const emailInput = document.getElementById("email");
-    const emailError = document.getElementById("emailError");
+    const form = document.getElementById('contactForm');
+    const emailField = document.getElementById('email');
+    const emailError = document.getElementById('emailError');
 
-    form.addEventListener("submit", function(event) {
-      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
-      if (!emailPattern.test(emailInput.value)) {
+    const allowedDomains = [
+      "gmail.com", "yahoo.com", "outlook.com", "hotmail.com",
+      "protonmail.com", "icloud.com", "aol.com", "zoho.com"
+    ];
+
+    form.addEventListener('submit', function(event) {
+      const emailValue = emailField.value.trim();
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/;
+
+      if (!emailPattern.test(emailValue)) {
+        emailError.textContent = "⚠ Please enter a valid email format (example: user@gmail.com)";
+        emailError.style.display = 'block';
         event.preventDefault();
-        emailError.style.display = "block";
-        emailInput.classList.add("invalid");
-      } else {
-        emailError.style.display = "none";
-        emailInput.classList.remove("invalid");
+        return;
       }
-    });
 
-    emailInput.addEventListener("input", function() {
-      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
-      if (emailPattern.test(emailInput.value)) {
-        emailError.style.display = "none";
-        emailInput.classList.remove("invalid");
+      const domain = emailValue.split('@')[1];
+      if (!allowedDomains.includes(domain)) {
+        emailError.textContent = `⚠ Only popular domains are allowed (gmail, yahoo, outlook, etc.)`;
+        emailError.style.display = 'block';
+        event.preventDefault();
+        return;
       }
+
+      emailError.style.display = 'none';
     });
   </script>
 
