@@ -1,0 +1,127 @@
+/* 🌌 Base Styling */
+body {
+  background: linear-gradient(135deg, #000000, #111111);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* 🎥 Title */
+h1 {
+  font-size: 3em;
+  text-align: center;
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: pulse 2s infinite alternate;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  font-weight: 800;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.07); }
+}
+
+/* ⚡ Attention Message */
+#attention {
+  text-align: center;
+  margin-top: 30px;
+  color: #0ff;
+  font-size: 1.3em;
+  font-weight: 600;
+  animation: blink 1.2s infinite;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+/* 📂 Dropdown Menu */
+select {
+  display: block;
+  margin: 30px auto 50px auto;
+  padding: 12px 20px;
+  font-size: 1.1em;
+  border-radius: 10px;
+  background-color: #111;
+  color: #0ff;
+  border: 2px solid #0ff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+select:hover {
+  box-shadow: 0 0 15px #0ff;
+  transform: scale(1.05);
+}
+
+/* 🎬 Video Lists */
+.video-list {
+  max-width: 800px;
+  margin: auto;
+  display: none;
+  animation: fadeSlide 0.6s ease forwards;
+  padding: 25px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+}
+
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(25px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 🔗 Video Links */
+.video-link {
+  display: block;
+  margin: 15px 0;
+  font-size: 1.15em;
+  color: #ff4444;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.video-link:hover {
+  color: #fff;
+  border-color: #0ff;
+  text-shadow: 0 0 8px #0ff, 0 0 15px #ff4444;
+  transform: translateX(5px);
+}
+
+.video-link:visited {
+  color: #0ff;
+}
+
+/* 📘 Section Headings */
+h3 {
+  color: #0ff;
+  margin-top: 40px;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+}
+
+/* ⬅️ Back Link */
+.back-link {
+  display: block;
+  margin: 50px auto 20px auto;
+  text-align: center;
+  font-size: 1.2em;
+  color: #0ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  text-shadow: 0 0 10px #0ff, 0 0 20px #ff4444;
+  transform: scale(1.1);
+}
